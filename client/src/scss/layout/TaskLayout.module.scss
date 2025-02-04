@@ -1,0 +1,69 @@
+/* @import "../variable.scss"; */
+@use "../variable" as *;
+
+.TaskLayout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "event" "category" "calendar";
+  gap: 1rem;
+  align-items: start;
+
+  .TaskEvents {
+    grid-area: event;
+  }
+
+  .TaskCategory {
+    grid-area: category;
+  }
+
+  .TaskCalendar {
+    grid-area: calendar;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .TaskLayout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "event category" "calendar calendar";
+    gap: 1rem;
+    align-items: start;
+
+    .TaskEvents {
+      grid-area: event;
+    }
+
+    .TaskCategory {
+      grid-area: category;
+    }
+
+    .TaskCalendar {
+      grid-area: calendar;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .TaskLayout {
+    height: $MainContentHeight;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "event calendar calendar calendar" "category calendar calendar calendar";
+    gap: 1rem;
+    align-items: start;
+
+    .TaskEvents {
+      grid-area: event;
+    }
+
+    .TaskCategory {
+      grid-area: category;
+    }
+
+    .TaskCalendar {
+      grid-area: calendar;
+    }
+  }
+}

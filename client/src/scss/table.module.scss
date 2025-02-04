@@ -1,0 +1,60 @@
+@mixin ColStructure {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+.Table {
+  @apply text-sm w-full h-full my-4;
+  display: grid;
+  grid-template-columns: repeat(var(--num-columns), 1fr);
+  grid-template-rows: auto 1fr;
+
+  .TableHeader,
+  .TableRow {
+    @include ColStructure();
+    @apply border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted max-h-14;
+  }
+
+  .TableHeader {
+    position: sticky;
+    top: 0;
+    @apply bg-card;
+  }
+
+  .TableHeader {
+    @apply text-center font-medium text-muted-foreground;
+  }
+
+  .TableBody {
+    overflow: scroll;
+    @include ColStructure();
+  }
+
+  .TableBody .TableRow:last-child {
+    @apply border-b-0;
+  }
+
+  .TableHeading,
+  .TableCell {
+    display: grid;
+    place-items: center;
+    @apply p-4 text-center;
+  }
+
+  .TableFullCell,
+  .TableFooter {
+    grid-column: 1 / -1;
+  }
+
+  .TableFooter {
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+}
+
+.T2 {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: span 7;
+}

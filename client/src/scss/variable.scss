@@ -1,0 +1,12 @@
+// Break-Points
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+$NavHeight: 4.5rem;
+$SidebarWidth: 12rem;
+//2rems are basically the padding of 1rem on each side
+$MainContentHeight: calc(100svh - $NavHeight - 2rem);
+$MainContentWidth: calc(100svw - $SidebarWidth - 2rem);

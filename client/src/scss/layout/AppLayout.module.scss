@@ -1,0 +1,47 @@
+/* @import "../variable.scss"; */
+@use "../variable" as *;
+
+.AppLayout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: $NavHeight auto;
+  grid-template-areas: "sidebar nav" "content content";
+  align-items: start;
+
+  .AppNavbar {
+    grid-area: nav;
+  }
+
+  .AppSidebar {
+    grid-area: sidebar;
+  }
+
+  .AppContent {
+    grid-area: content;
+  }
+}
+
+@media (min-width: $breakpoint-2xl) {
+  .AppLayout {
+    grid-template-columns: $SidebarWidth auto;
+    grid-template-rows: $NavHeight calc(100svh - $NavHeight);
+    grid-template-areas: "sidebar nav" "sidebar content";
+
+    .AppContent {
+      height: 100%; //This is important for scroll area component
+      display: flex;
+      justify-content: center;
+      align-items: start;
+    }
+
+    .AppSidebar {
+      > div {
+        height: $NavHeight;
+      }
+
+      ul {
+        height: calc(100% - $NavHeight);
+      }
+    }
+  }
+}
