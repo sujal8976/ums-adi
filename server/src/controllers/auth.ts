@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import User from "../models/user";
 import createError from "../utils/createError";
 import { JWT_SECRET } from "../config/dotenv";

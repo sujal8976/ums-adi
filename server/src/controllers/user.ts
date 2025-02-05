@@ -3,7 +3,7 @@ import User, { UserAccount } from "../models/user";
 import Role from "../models/role";
 import createError from "../utils/createError";
 import crypto from "crypto";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 const SALT_ROUNDS = 10;
 

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { DB_URI, SUPER_ADMIN_USERNAME } from "./config/dotenv";
 import Role from "./models/role";
 import User from "./models/user";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 const defaultSuperAdminPermissions = [
   {
