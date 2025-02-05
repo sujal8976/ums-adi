@@ -81,7 +81,6 @@ UMS/
 │   ├── vercel.json
 │   └── vite.config.ts
 ├── LICENSE
-├── package.json
 └── README.md
 ```
 
